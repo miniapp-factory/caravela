@@ -13,11 +13,15 @@ export function PortfolioViewer() {
   useEffect(() => {
     async function fetchBalance() {
       try {
-        const provider = new ethers.JsonRpcProvider(process.env.NEXT_PUBLIC_RPC_URL);
+        const provider = new ethers.providers.JsonRpcProvider(
+          process.env.NEXT_PUBLIC_RPC_URL as string
+        );
         const bal = await provider.getBalance(WALLET_ADDRESS);
-        setBalance(ethers.formatEther(bal));
-      } catch (err: any) {
-        setError(err.message || "Failed to fetch balance");
+        setBalance(ethers.utils.formatEther(bal));
+      } catch (err) {
+        const message =
+          err instanceof Error ? err.message : "Failed to fetch balance";
+        setError(message);
       } finally {
         setLoading(false);
       }
