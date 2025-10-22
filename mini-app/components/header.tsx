@@ -34,6 +34,10 @@ const pages = [
     label: <span className="text-lg">Portfolio</span>,
     href: "/portfolio",
   },
+  {
+    label: <span className="text-lg">Trades</span>,
+    href: "/trades",
+  },
 ];
 
 export function Header() {
