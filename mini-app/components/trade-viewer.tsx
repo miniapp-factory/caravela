@@ -21,10 +21,12 @@ export function TradeViewer() {
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
         }
-        const data = await res.json();
+        const data: { trades: Trade[] } = await res.json();
         setTrades(data.trades);
-      } catch (err: any) {
-        setError(err.message || "Failed to fetch trades");
+      } catch (err: unknown) {
+        const message =
+          err instanceof Error ? err.message : "Failed to fetch trades";
+        setError(message);
       } finally {
         setLoading(false);
       }
@@ -42,7 +44,9 @@ export function TradeViewer() {
 
   return (
     <div className="p-4">
-      <h2 className="text-2xl font-semibold mb-4">Trade History for 0xA66B448f97CBf58D12f00711C02bAC2d9EAC6f7f</h2>
+      <h2 className="text-2xl font-semibold mb-4">
+        Trade History for 0xA66B448f97CBf58D12f00711C02bAC2d9EAC6f7f
+      </h2>
       {trades.length === 0 ? (
         <p>No trades found.</p>
       ) : (
