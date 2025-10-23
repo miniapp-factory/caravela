@@ -1,3 +1,5 @@
+"use client";
+
 import { RoundedCard } from "@/components/ui/rounded-card";
 import { useEffect, useState } from "react";
 import { ethers } from "ethers";

@@ -1,3 +1,5 @@
+"use client";
+
 import { RoundedCard } from "@/components/ui/rounded-card";
 import { DatePicker } from "@/components/ui/date-picker";
 import { NumberInput } from "@/components/ui/number-input";
