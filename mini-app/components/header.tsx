@@ -50,6 +50,10 @@ const pages = [
     label: <span className="text-lg">Settings</span>,
     href: "/settings",
   },
+  {
+    label: <span className="text-lg">Flight Radar</span>,
+    href: "/flight",
+  },
 ];
 
 export function Header() {
