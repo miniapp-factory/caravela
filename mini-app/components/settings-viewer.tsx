@@ -1,5 +1,3 @@
-"use client";
-
 import { RoundedCard } from "@/components/ui/rounded-card";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { CurrencySelector } from "@/components/ui/currency-selector";

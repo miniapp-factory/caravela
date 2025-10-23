@@ -1,5 +1,4 @@
-"use client";
-
+import { RoundedCard } from "@/components/ui/rounded-card";
 import { useEffect, useState } from "react";
 import { ethers } from "ethers";
 
@@ -38,7 +37,7 @@ export function PortfolioViewer() {
   }
 
   return (
-    <div className="p-4">
+    <RoundedCard>
       <h2 className="text-2xl font-semibold mb-4">Portfolio Viewer</h2>
       <p>
         <strong>Wallet Address:</strong> {WALLET_ADDRESS}
@@ -46,11 +45,10 @@ export function PortfolioViewer() {
       <p>
         <strong>ETH Balance:</strong> {balance} ETH
       </p>
-      {/* Placeholder for token list or other assets */}
       <div className="mt-6">
         <h3 className="text-xl font-medium mb-2">Tokens (placeholder)</h3>
         <p>No token data available in this demo.</p>
       </div>
-    </div>
+    </RoundedCard>
   );
 }

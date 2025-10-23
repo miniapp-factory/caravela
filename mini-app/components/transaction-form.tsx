@@ -1,9 +1,7 @@
-"use client";
-
-import { useState } from "react";
 import { RoundedCard } from "@/components/ui/rounded-card";
 import { DatePicker } from "@/components/ui/date-picker";
 import { NumberInput } from "@/components/ui/number-input";
+import { useState } from "react";
 
 export function TransactionForm() {
   const [date, setDate] = useState<string>("");
