@@ -5,6 +5,7 @@ import { MiniAppProvider } from "@/components/context/miniapp-provider";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { description, title } from "@/lib/metadata";
+import { ThemeProvider } from "next-themes";
 
 const inter = localFont({
   src: "./InterVariable.ttf",
@@ -23,13 +24,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
-        <MiniAppProvider>
-          <div className="font-sans min-h-screen flex flex-col place-content-between">
-            <Header />
-            {children}
-            <Footer />
-          </div>
-        </MiniAppProvider>
+        <ThemeProvider attribute="class" defaultTheme="dark">
+          <MiniAppProvider>
+            <div className="font-sans min-h-screen flex flex-col place-content-between">
+              <Header />
+              {children}
+              <Footer />
+            </div>
+          </MiniAppProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

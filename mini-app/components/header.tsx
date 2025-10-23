@@ -31,12 +31,24 @@ const pages = [
     href: "/",
   },
   {
-    label: <span className="text-lg">Portfolio</span>,
-    href: "/portfolio",
+    label: <span className="text-lg">Dashboard</span>,
+    href: "/dashboard",
   },
   {
-    label: <span className="text-lg">Trades</span>,
-    href: "/trades",
+    label: <span className="text-lg">Holdings</span>,
+    href: "/holdings",
+  },
+  {
+    label: <span className="text-lg">Add Transaction</span>,
+    href: "/add-transaction",
+  },
+  {
+    label: <span className="text-lg">Market</span>,
+    href: "/market",
+  },
+  {
+    label: <span className="text-lg">Settings</span>,
+    href: "/settings",
   },
 ];
 
